@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# remove output files
+*.png
+*.svg
+*.pdf

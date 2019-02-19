@@ -1,5 +1,7 @@
 # vector-synth
 Idea document WIP
+## inspiration:
+![Bad North game map](badnorthmap.jpg)
 ## Generative vector art
 Initial idea is to have a little synth front panel generator inspired by the work I have been doing on the hoot stickers in inkscape.
 can split the program into 3 parts.

@@ -104,3 +104,7 @@ ENV/
 *.png
 *.svg
 *.pdf
+
+
+#pycharm stuff
+.idea/

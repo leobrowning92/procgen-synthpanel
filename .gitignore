@@ -101,9 +101,7 @@ ENV/
 .mypy_cache/
 
 # remove output files
-*.png
-*.svg
-*.pdf
+outputs/
 
 
 #pycharm stuff

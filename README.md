@@ -1,7 +1,13 @@
 # vector-synth
-Idea document WIP
+
+## latest output
+
+![Latest out](out.png)
+
 ## inspiration:
-![Bad North game map](badnorthmap.jpg)
+Bad North game map            |  table hooter verctor graphics
+:-------------------------:|:-------------------------:
+![Bad North game map](badnorthmap.jpg)  |  ![majorhooter](majorhooter.png)
 ## Generative vector art
 Initial idea is to have a little synth front panel generator inspired by the work I have been doing on the hoot stickers in inkscape.
 can split the program into 3 parts.

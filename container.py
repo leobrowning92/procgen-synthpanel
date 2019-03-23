@@ -41,16 +41,19 @@ class Container:
         # could add check that child is actually within parent
         self.children.append(Container(x, y, width, height, linecolor=linecolor))
 
+    def make_gridsnapped_point(self):
+        x1 = np.random.rand() * self.width + self.x
+        y1 = np.random.rand() * self.height + self.y
+        return snap.snap_to_grid(self.grid, (x1, y1))
+
     def random_child(self, v=False):
         # TODO : generate child from two random points within parent, not with xyhw
 
-        x1 = np.random.rand() * self.width + self.x
-        y1 = np.random.rand() * self.height + self.y
-        x2 = np.random.rand() * self.width + self.x
-        y2 = np.random.rand() * self.height + self.y
+        startpoint = self.make_gridsnapped_point()
+        endpoint = self.make_gridsnapped_point()
+        while np.any(np.equal(startpoint,endpoint)):
 
-        startpoint = snap.snap_to_grid(self.grid, (x1, y1))
-        endpoint = snap.snap_to_grid(self.grid, (x2, y2))
+            endpoint = self.make_gridsnapped_point()
         width = endpoint[0] - startpoint[0]
         height = endpoint[1] - startpoint[1]
         self.insert_child(*startpoint, width, height, self.childcolor)
@@ -72,7 +75,7 @@ def random_grid(n=2, v=False, savename="out"):
                 grid_size * 0.9,
                 grid_size * 0.9,
             )
-            for k in range(5):
+            for k in range(1):
                 cont.random_child(v=True)
             cont.draw_bbox(page, v=v)
 

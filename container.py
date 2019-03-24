@@ -38,6 +38,7 @@ class Container:
         self.children = []
         self.grid = self.make_grid(*primary_grid, grid_inset)
 
+    # spatial functions
     def make_grid(self, nx, ny, inset=0):
         xstart = self.x + inset
         ystart = self.y + inset
@@ -45,6 +46,12 @@ class Container:
         ylim = (ystart, self.y + self.height - inset)
         return snap.make_grid(xlim, ylim, nx, ny)
 
+    def make_gridsnapped_point(self):
+        x1 = np.random.rand() * self.width + self.x
+        y1 = np.random.rand() * self.height + self.y
+        return snap.snap_to_grid(self.grid, (x1, y1))
+
+    # Drawing
     def draw_bbox(self, page, v=False):
         linestyle = fl.shape().stroke(fl.rgb(*RED)).width(1)
         page.place(linestyle.rectangle(self.x, self.y, self.width, self.height))
@@ -72,16 +79,13 @@ class Container:
             for child in self.children:
                 child.draw(page, v=v)
 
+    # Child creation
+
     def insert_child(self, x, y, width, height, linecolor, inset=0):
         # could add check that child is actually within parent
         self.children.append(
             Container(x, y, width, height, linecolor=linecolor, inset=inset)
         )
-
-    def make_gridsnapped_point(self):
-        x1 = np.random.rand() * self.width + self.x
-        y1 = np.random.rand() * self.height + self.y
-        return snap.snap_to_grid(self.grid, (x1, y1))
 
     def random_child(self, v=False):
 

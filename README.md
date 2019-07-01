@@ -8,6 +8,28 @@
 Bad North game map            |  table hooter verctor graphics
 :-------------------------:|:-------------------------:
 ![Bad North game map](badnorthmap.jpg)  |  ![majorhooter](majorhooter.png)
+
+
+## MVP definition of Done
+
+The idea here is to guard against feature creap. 
+This is the desired output:
+__from command line, output a single, series or grid of synths.__
+These are the features of the project
+that I would consider to be necessary to have a finished draft
+- varying size rectangular based top level containers
+- place and split methods for child containers
+    - place to add a child container, 
+    - split a container in to two child containers
+- children can be rendered as one of:
+    - button
+    - keyboard
+    - speaker
+    - slider
+    - text label (can be indicative, ie series of blobs rather than real text)
+    - arrays of buttons and sliders
+- fixed set of color palletes, with features randomly selected from them
+
 ## Generative vector art
 Initial idea is to have a little synth front panel generator inspired by the work I have been doing on the hoot stickers in inkscape.
 can split the program into 3 parts.
